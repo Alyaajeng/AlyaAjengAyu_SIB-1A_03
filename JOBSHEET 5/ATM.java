@@ -10,12 +10,12 @@ public class ATM {
         System.out.println("---------------------------------");
         System.out.println("  SELAMAT DATANG DI BANK JALI !");
         System.out.println("---------------------------------");
-        System.out.print("Masukkan ID Anda : ");
+        System.out.print("Masukkan ID Anda  : ");
         String inputId = scan.next();
-        System.out.print("\nMasukkan PIN Anda : ");
+        System.out.print("Masukkan PIN Anda : ");
         int inputPin = scan.nextInt();
         if (inputId.equals(id) && inputPin == pin) {
-            System.out.println("\t\tLogin Berhasil !");
+            System.out.println("\n\tLogin Berhasil !\n");
             System.out.println("||==================||");
             System.out.println("||   PILIHAN MENU   ||");
             System.out.println("||__________________||");
@@ -30,32 +30,32 @@ public class ATM {
                     System.out.println("Saldo Anda: Rp" + saldo);
                     break;
                 case 2:
-                    System.out.println("Jumlah Uang Yang Ingin Anda Tarik\nRp");
+                    System.out.print("Jumlah Uang Yang Ingin Anda Tarik : Rp");
                     int tarik = scan.nextInt();
-                    if (tarik > saldo - 49999) {
-                        System.out.println("Saldo Anda Tidak Mencukupi");
-                    } else if (tarik % 50000 != 0) {
+                    if (tarik <= saldo - 50000){
+                        if (tarik % 50000 == 0){
+                            saldo -= tarik;
+                            uang += tarik;
+                            System.out.println("Penarikan Tunai Berhasil\nSisa saldo Anda : Rp" + saldo +
+                            "\nSisa uang anda : Rp" + uang); 
+                        } else
                         System.out.println("Penarikan tunai harus kelipatan Rp50.000");
-                    } else {
-                        saldo -= tarik;
-                        uang += tarik;
-                        System.out.println("Penarikan Tunai Berhasil\nSisa saldo Anda : Rp" + saldo +
-                                "\nSisa uang anda : Rp" + uang);
-                    }
+                    } else 
+                    System.out.println("Saldo Anda Tidak Mencukupi");
                     break;
                 case 3:
-                    System.out.println("Jumlah uang yang ingin Anda setorkan\nRp");
+                    System.out.println("Jumlah uang yang ingin Anda setorkan : Rp");
                     int setor = scan.nextInt();
-                    if (setor > uang) {
-                        System.out.println("Uang Anda tidak mencukupi untuk melakukan transaksi ini");
-                    } else if (setor % 50000 != 0) {
-                        System.out.println("Penyetoran tunai harus kelipatan Rp50.000");
-                    } else {
-                        saldo += setor;
-                        uang -= setor;
-                        System.out.println("Penyetoran Tunai Berhasil\nSisa saldo Anda : Rp" + saldo +
+                    if (setor <= uang - 50000) {
+                        if (setor % 50000 == 0) {
+                            saldo += setor;
+                            uang -= setor;
+                            System.out.println("Penyetoran Tunai Berhasil\nSisa saldo Anda : Rp" + saldo +
                                 "\nSisa uang anda : Rp" + uang);
-                    }
+                        } else 
+                        System.out.println("Penyetoran tunai harus kelipatan Rp50.000");
+                    } else 
+                    System.out.println("Uang Anda Tidak Mencukupi");
                     break;
                 case 4:
                     System.out.println("Terimakasih Telah Menggunakan Bank Jali");
