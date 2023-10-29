@@ -12,10 +12,10 @@ public class Lingkaran03 {
         //Input
         System.out.println("Masukkan jari-jari lingkaran: ");
         r=input.nextInt();
+        
+        //output
         keliling= 2*3.14*r;
         luas= 3.14*r*r;
-
-        //output
         System.out.println("keliling lingkaran: " + keliling);
         System.out.println("luas lingkaran: " + luas);
 

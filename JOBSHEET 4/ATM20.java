@@ -19,6 +19,5 @@ public class ATM20 {
         int saldoAkhir = saldo - tarik;
         System.out.printf("Penarikan Sejumlah Rp%d Berhasil !", tarik);
         System.out.print("\nSisa Saldo Anda : Rp" + saldoAkhir);
-
     }
 }
