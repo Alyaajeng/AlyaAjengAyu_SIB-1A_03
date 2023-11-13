@@ -4,9 +4,9 @@ public class ATM {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String[] id = { "Ekal", "Alya", "Erfin" };
-        int[] pin = { 332005, 332005, 332005 };
-        int[] saldo = { 1000000, 1000000, 1000000 };
-        int[] uang = { 1000000, 1000000, 1000000 };
+        int[] pin = { 332005, 181104, 332005 };
+        int[] saldo = { 10000000, 5000000, 20000000 };
+        int[] uang = { 5000000, 3000000, 10000000 };
         boolean menu = false;
         boolean exitMenu = false;
         int user = -1;
